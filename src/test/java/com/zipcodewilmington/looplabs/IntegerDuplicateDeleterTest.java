@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 /**
  * Created by leon on 1/25/18.
+ *
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying this class.
  */
 public class IntegerDuplicateDeleterTest {
@@ -37,7 +38,6 @@ public class IntegerDuplicateDeleterTest {
     }
 
 
-
     @Test
     public void testRemoveDuplicatesExactly2() {
         Integer[] expected = new Integer[]{0, 0, 0, 2, 2, 4, 4, 5, 5, 5, 9, 9, 9};
@@ -56,31 +56,6 @@ public class IntegerDuplicateDeleterTest {
         Integer[] actual = deleter.removeDuplicatesExactly(3);
         TestUtils.assertArrayEquality(expected, actual);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @Test
@@ -117,7 +92,7 @@ public class IntegerDuplicateDeleterTest {
     public void testRemoveDuplicates3() {
         Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
         DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-        Integer[] expected = new Integer[]{1,1,2,4,4};
+        Integer[] expected = new Integer[]{1, 1, 2, 4, 4};
         Integer[] actual = deleter.removeDuplicates(3);
         TestUtils.assertArrayEquality(expected, actual);
     }
@@ -127,28 +102,15 @@ public class IntegerDuplicateDeleterTest {
     public void testRemoveDuplicates4() {
         Integer[] array = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 5};
         DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(array);
-        Integer[] expected = new Integer[]{0,0,0,1,1,2,3,3,3,4,4};
+        Integer[] expected = new Integer[]{0, 0, 0, 1, 1, 2, 3, 3, 3, 4, 4};
         Integer[] actual = deleter.removeDuplicates(4);
         TestUtils.assertArrayEquality(expected, actual);
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Test
     public void testRemoveDuplicatesExactlyIdempotence() {
-        Integer[] input = RandomNumberFactory.createIntegers(0,50,150);
+        Integer[] input = RandomNumberFactory.createIntegers(0, 50, 150);
         DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(input);
         Integer[] expected = deleter.removeDuplicatesExactly(5);
 
@@ -166,7 +128,7 @@ public class IntegerDuplicateDeleterTest {
 
     @Test
     public void testRemoveDuplicatesIdempotence() {
-        Integer[] input = RandomNumberFactory.createIntegers(0,50,150);
+        Integer[] input = RandomNumberFactory.createIntegers(0, 50, 150);
         DuplicateDeleter<Integer> deleter = new IntegerDuplicateDeleter(input);
         Integer[] expected = deleter.removeDuplicates(5);
 
